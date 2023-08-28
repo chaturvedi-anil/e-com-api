@@ -1,9 +1,12 @@
 // importing express
 import express from 'express';
+import bodyParser from 'body-parser';
 import ProductRoutes from "./src/features/product/product.routes.js";
 
 const port = 8000;
 const server = express();
+
+server.use(bodyParser.json());
 
 // for all the product routes
 server.use('/api/products', ProductRoutes);

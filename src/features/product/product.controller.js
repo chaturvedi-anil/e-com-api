@@ -6,11 +6,15 @@ export default class ProductController
     {
         let products = ProductModel.GetAll();
 
+        // reponse as json
         res.status(200).send(products);
     }
     addProduct(req, res)
     {
-        return res.json({'message': "add product"});
+        console.log(req.body);
+        console.log('add product api');
+
+        res.status(200).send('Post request received');
     }
 
     rateProduct(req, res)
